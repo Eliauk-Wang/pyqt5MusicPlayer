@@ -1,0 +1,25 @@
+方法一、
+pip freeze >requirements.txt
+
+pip install -r requirements.txt
+
+
+方法二、
+首先用pip install pipenv来安装它，
+然后在你的项目的根目录下面运行pipenv --three来生成Python3的虚拟环境，
+或者pipenv --two生成Python2环境。
+
+这样pipenv会在这个项目里创建一个
+pipfile的文件，就像package.json一样，里面记录了项目所有的依赖包版本信息。
+
+要运行pipenv shell进入虚拟环境，可以输入exit退出。pipenv install可以一键
+安装所有依赖包，还会生成pipfile.lock文件，里面记录了这次安装时的依赖包。
+
+
+在pipenv install后面加上包名称，比如pipenv install flask可以安装Flask到生产
+环境，再加参数，比如pipenv install flask --dev就会安装到开发环境。
+
+类似地，
+把上面的install改成uninstall就会卸载依赖包，pipenv uninstall --all可以卸载
+项目下所有的包。
+
